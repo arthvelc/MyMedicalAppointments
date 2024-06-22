@@ -8,9 +8,9 @@ public class Patient extends User {
     private String blood;
 
     public Patient(String name, String email){
-        super(name, email);
+        super(name,email);
+        //mas instrucciones
     }
-
 
     // 54.5
     public void setWeight(double weight) {
@@ -49,11 +49,14 @@ public class Patient extends User {
 
     @Override
     public String toString() {
-        return super.toString() + "\n birthdate: " + birthday + "\n weight: " + weight + "\n height: " + height;
+        return super.toString() + "\nAge: " + birthday + "\n Weight: " +getWeight()+ "\n Height"+getHeight()+"\nBlood"+blood;
     }
 
     @Override
     public void showDataUser() {
+        System.out.println("Paciente");
+        System.out.println("Historial completo desde naciemiento");
 
     }
+
 }
