@@ -7,16 +7,9 @@ public abstract class User {
     private String address;
     private String phoneNumber;
 
-    public User(String name, String email){
+    public User(String name, String email) {
         this.name = name;
         this.email = email;
-    }
-
-    public User( String name, String email, String address, String phoneNumber){
-        this.name = name;
-        this.email = email;
-        this.address = address;
-        this.phoneNumber = phoneNumber;
     }
 
     public int getId() {
@@ -56,14 +49,19 @@ public abstract class User {
     }
 
     public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+        if (phoneNumber.length() > 8){
+            System.out.println("El número telefónico debe ser de 8 dígitos máximo");
+        }else if(phoneNumber.length() == 8){
+            this.phoneNumber = phoneNumber;
+        }
     }
 
-    // sobre escritura de métodos, nos ayuda a redefinir un método que sea heredado de la clase padre
     @Override
     public String toString() {
-        return "model.User: " + name + "\nEmail:" + email + "\nAdress: " + address + "\nPhonenumber: " + phoneNumber;
+        return "model.User: " + name + ", Email: "+email+
+                "\nAddreess: "+address+". Phone: "+phoneNumber;
     }
 
-    public abstract void showDataUser(); //así es como se implementa un método abstracto D:
+    public abstract void showDataUser();
+
 }

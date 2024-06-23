@@ -2,13 +2,12 @@ package model;
 
 import java.util.Date;
 
-public class AppointmentNurse implements IScheduleable{
+public class AppointmentNurse implements ISchedulable{
     private int id;
     private Nurse nurse;
     private Patient patient;
     private Date date;
     private String time;
-
 
     public int getId() {
         return id;
